@@ -1,0 +1,29 @@
+=pod
+
+=head1 NAME
+
+Games::ConnectFour - A connect four game in ANSI
+
+=head1 DESCRIPTION
+
+A command-line Connect Four game made with ANSI colours and cursor movements. The game mode can be changed to connect 3 to 6 counters, instead of 4. You can also choose from four different board sizes. Get your friends together and have fun.
+
+Once you have installed Connect Four, you can run it with:
+
+ connectfour
+
+=head1 TODO
+
+=over
+
+* Sound effects
+
+* 1 player mode (AI)
+
+* Statistics of win/loss
+
+=back
+
+=head1 AUTHOR
+
+Blaise Roth <blaizer@cpan.org>

@@ -1,0 +1,11 @@
+bin/connectfour
+Build.PL
+lib/Games/ConnectFour.pm
+lib/pods/Games/ConnectFour.pod
+MANIFEST			This list of files
+META.yml
+README
+'share/no sounds yet'
+t/00-load.t
+t/manifest.t
+t/pod.t

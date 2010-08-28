@@ -1,0 +1,13 @@
+Games::ConnectFour - A Connect Four game in ANSI
+Blaise Roth
+
+To install:
+ perl Build.PL
+ ./Build
+ ./Build test
+ ./Build install
+
+To run (assuming Perl's bin is in your PATH):
+ connectfour
+
+Have fun!
