@@ -12,7 +12,7 @@ name: Games-ConnectFour
 provides:
   Games::ConnectFour:
     file: lib/Games/ConnectFour.pm
-    version: 0.012
+    version: 0.02
 recommends:
   Test::Pod: 1.22
   Test::Pod::Coverage: 0.18
@@ -24,4 +24,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/Blaizer/ConnectFour
-version: 0.012
+version: 0.02

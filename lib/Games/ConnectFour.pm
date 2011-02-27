@@ -1,5 +1,5 @@
 package Games::ConnectFour;
-our $VERSION = 0.012;
+our $VERSION = 0.02;
 use strict;
 use warnings;
 if($^O eq "MSWin32") {
@@ -34,7 +34,7 @@ sub input {
 sub init {
 	print "\n$c{d}Welcome to Connect Four!\n";
 	print "Set your console's background to black for best results.\n" if $^O ne "MSWin32";
-	print "Exit at any time with Ctrl+C.\n\n";
+	print "Exit at any time with a Control-C or equivalent.\n\n";
 	while(1) {
 		my $connect = input("How many do you want to connect (3, [4], 5, 6)? ", 4, 3..6);
 		my ($w, $h) = @{(
@@ -71,11 +71,17 @@ sub init {
 			print "\r\e[$up\e[$right";
 			my $row = -1;
 			do {
-				$row++;
-				print " \b";
-				print "\e[1B";
-				print "o\b";
-				system "";
+				if(fork) {
+					$row++;
+					select undef, undef, undef, 0.04;
+					wait;
+				}
+				else {
+					print " \b";
+					print "\e[1B";
+					print "o\b";
+					exit;
+				}
 			} while $row + 1 < $h and $board[$row+1][$in] eq " ";
 			$board[$row][$in] = $turn;
 			print "$c{restore}\r";
